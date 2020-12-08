@@ -1,2 +1,2 @@
-def 
+class Cart
 end
