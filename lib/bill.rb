@@ -24,7 +24,7 @@ class Bill
 
   def each_item_price(item)
     item_details = stored_items[item]
-      if !item_details.sale_price.nil?
+      if item_details.sale_qty != 0 && (items_with_qty[item.to_s] >= item_details.sale_qty)
         @item_sale_price =  ((item_details.sale_price) * (items_with_qty[item.to_s] / (item_details.sale_qty))) + ((item_details.unit_price) * (items_with_qty[item.to_s] % (item_details.sale_qty)))
         @total_sale_price += @item_sale_price
         @item_sale_price

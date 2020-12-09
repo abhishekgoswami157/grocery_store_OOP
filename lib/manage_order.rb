@@ -12,10 +12,10 @@ class ManageOrder
     @items.downcase.split(",").map{|item| item.strip}
   end
   def create_cart
-    @items_with_qty = Cart.new(str_to_arr).list_items
+    Cart.new(str_to_arr).list_items
   end
   def show_bill
     create_cart
-    Bill.new(@items_with_qty).create_bill
+    Bill.new(create_cart).create_bill
   end
 end
