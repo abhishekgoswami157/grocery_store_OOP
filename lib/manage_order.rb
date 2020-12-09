@@ -1,3 +1,7 @@
+require_relative "cart"
+require_relative "bill"
+
+
 class ManageOrder
   attr_reader :items
   def initialize(items)

@@ -1,5 +1,5 @@
+require_relative "pricing_table"
 class Bill
-  include PricingTable
   attr_reader :stored_items, :items_with_qty, :total_sale_price, :total_price, :total_discount, :item_sale_price
   def initialize(items_with_qty)
     @items_with_qty = items_with_qty

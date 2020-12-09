@@ -1,3 +1,4 @@
+require_relative "grocery_item"
 module PricingTable
   def self.price_list
     price_list = {
