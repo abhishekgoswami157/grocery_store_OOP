@@ -1,4 +1,5 @@
 require_relative "pricing_table"
+require_relative "cart"
 class Bill
   attr_reader :stored_items, :items_with_qty, :total_sale_price, :total_price, :item_sale_price
   def initialize(items_with_qty)
@@ -36,6 +37,7 @@ class Bill
 
   def total_sale_price(item_sale_price)
     @total_sale_price += @item_sale_price
+    
   end
 
   def create_table

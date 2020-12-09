@@ -6,13 +6,12 @@ class ManageOrder
   attr_reader :items
   def initialize(items)
     @items = items
-    @items_with_qty = {}
   end
-  def str_to_arr 
+  def arr_of_items
     @items.downcase.split(",").map{|item| item.strip}
   end
   def create_cart
-    Cart.new(str_to_arr).list_items
+    Cart.new(arr_of_items).list_items
   end
   def show_bill
     Bill.new(create_cart).create_bill

@@ -4,7 +4,7 @@ class TakeOrder
   def self.manage
     puts "Please enter all the items pusrchased separated by a comma"
     items = gets.chomp
-    if(items.strip.length != 0)
+    if(!items.strip.length.zero?)
       ManageOrder.new(items).show_bill
     else
       puts "Aww!! It seems you didn't enter any item"
