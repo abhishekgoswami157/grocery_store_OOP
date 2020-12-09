@@ -15,7 +15,6 @@ class ManageOrder
     Cart.new(str_to_arr).list_items
   end
   def show_bill
-    create_cart
     Bill.new(create_cart).create_bill
   end
 end
