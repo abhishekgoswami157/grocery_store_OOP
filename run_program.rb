@@ -1,4 +1,4 @@
-require_relative "manage_order"
+require_relative "./lib/manage_order"
 
 class TakeOrder
   def self.manage
