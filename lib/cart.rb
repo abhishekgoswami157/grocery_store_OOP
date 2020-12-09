@@ -1,14 +1,18 @@
+require_relative "item"
+
 class Cart
-  attr_reader :frequencies
+  attr_reader :frequencies, :cart
   def initialize(items)
-    @frequencies = Hash.new(0)
+    @items_with_qty = items.tally
     @items = items
+    @cart = []
   end
  
-  def list_items
-    @items.each do|item|
-      @frequencies[item] += 1
+  def store_items
+    @items_with_qty.each do |item, qty|
+      @cart << Item.new(item, qty)
     end
-    @frequencies
+    @cart
   end
 end
+
