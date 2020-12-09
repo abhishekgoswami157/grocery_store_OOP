@@ -1,6 +1,6 @@
 require_relative "pricing_table"
 class Bill
-  attr_reader :stored_items, :items_with_qty, :total_sale_price, :total_price, :total_discount, :item_sale_price
+  attr_reader :stored_items, :items_with_qty, :total_sale_price, :total_price, :item_sale_price
   def initialize(items_with_qty)
     @items_with_qty = items_with_qty
     @stored_items = PricingTable.price_list
